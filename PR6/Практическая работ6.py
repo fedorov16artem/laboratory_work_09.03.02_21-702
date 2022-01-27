@@ -1,4 +1,11 @@
- 
+ # -*- coding: utf-8 -*-
+ """
+
+
+    Практическая работа 2. номер зачетной книжки 21-702
+    Автор: Федоров Артем Андреевич
+    Дата:26.01.2022
+"""
 from cgitb import text
 from http import client
 from msvcrt import LK_NBLCK
