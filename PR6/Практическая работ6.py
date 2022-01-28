@@ -1,11 +1,5 @@
- # -*- coding: utf-8 -*-
- """
 
 
-    Практическая работа 2. номер зачетной книжки 21-702
-    Автор: Федоров Артем Андреевич
-    Дата:26.01.2022
-"""
 from cgitb import text
 from http import client
 from msvcrt import LK_NBLCK
@@ -17,17 +11,14 @@ from tkinter import messagebox
 
 # задача 2
 def chislo():
-    x=int(tab1N.get())
-    p=1
-    if x<=2:
-        messagebox.showwarning('название','введите другое число')
+    n=int(tab1N.get())
+    i=2
+    if n>=2:
+        while n%i !=0:
+            i+=1
+        messagebox.showinfo('готово!',i)
     else:
-        while p <= x:
-            p=p+1
-            if x%p!=0:
-                messagebox.showinfo('Готово!',x)
-            break
-    
+        messagebox.showerror('ошибка','число должно быть больше 2')
 # Задача 4
 def day1():
     x=int(tab2X.get())
@@ -47,10 +38,11 @@ def credznach():
         srzn += x
         cnt += 1
         x = float(tab3X.get())
-        srzn /= cnt
         tab3.update()
+        srzn /= cnt
         Rezyltat.config(text='срднее значение'+str(srzn))
-        
+
+        tab3.deletecommand(0, END)
 
 
 
